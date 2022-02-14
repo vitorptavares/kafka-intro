@@ -13,6 +13,9 @@ public class ProducerDemoWithCallBack {
     public static void main(String[] args) {
         //Create producer properties
         //https://kafka.apache.org/documentation/#producerconfigs
+
+        String topic_name = "topic_thread";
+
         Properties properties = new Properties();
         properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
@@ -24,7 +27,7 @@ public class ProducerDemoWithCallBack {
 
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
 
-        ProducerRecord<String, String> record = new ProducerRecord<>("first_topic", "hello world. This is the first data sent");
+        ProducerRecord<String, String> record = new ProducerRecord<>(topic_name, "hello world. This is the first data sent");
 
         for (int i = 0; i < 10; i++) {
             //send data

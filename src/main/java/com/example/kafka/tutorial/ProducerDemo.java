@@ -22,7 +22,7 @@ public class ProducerDemo {
         //value = string
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
 
-        ProducerRecord<String, String> record = new ProducerRecord<>("first_topic", "hello world. This is the first data sent");
+        ProducerRecord<String, String> record = new ProducerRecord<>("topic_testing_group", "hello world. Data sent");
 
         //send data
         //as this is async, only send is not enouth. We need flush or close

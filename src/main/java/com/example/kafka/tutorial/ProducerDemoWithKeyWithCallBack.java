@@ -19,7 +19,7 @@ public class ProducerDemoWithKeyWithCallBack {
         properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
         for (int i = 0; i < 10; i++) {
-            String topic = "first_topic";
+            String topic = "topic_testing_group";
             String value = "this is the second time executed";
             String key = String.valueOf(i);
             KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
